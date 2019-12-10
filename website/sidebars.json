@@ -1,0 +1,37 @@
+{
+  "docs": {
+    "关于Spug": [
+      "about-spug",
+      "change-log"
+    ],
+    "快速开始": [
+      "install",
+      "install-error",
+      "faq"
+    ],
+    "使用手册": [
+      "host-manage",
+      "batch-exec",
+      {
+        "type": "subcategory",
+        "label": "配置中心",
+        "ids": [
+          "conf-env",
+          "conf-service",
+          "conf-app"
+        ]
+      },
+      "scheduler",
+      "monitor",
+      {
+        "type": "subcategory",
+        "label": "报警中心",
+        "ids": [
+          "alarm-record",
+          "alarm-contact",
+          "alarm-group"
+        ]
+      }
+    ]
+  }
+}
