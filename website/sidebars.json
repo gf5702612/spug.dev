@@ -14,11 +14,21 @@
       "batch-exec",
       {
         "type": "subcategory",
+        "label": "应用发布",
+        "ids": [
+          "deploy-app",
+          "deploy-config",
+          "deploy-request"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "配置中心",
         "ids": [
           "conf-env",
           "conf-service",
-          "conf-app"
+          "conf-app",
+          "conf-set"
         ]
       },
       "scheduler",
@@ -32,6 +42,9 @@
           "alarm-group"
         ]
       }
+    ],
+    "进阶指南": [
+      "deploy-product"
     ]
   }
 }
