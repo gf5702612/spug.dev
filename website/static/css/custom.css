@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
- 
+
 /* your custom css */
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
@@ -20,4 +20,31 @@
 }
 
 @media only screen and (min-width: 1500px) {
+}
+
+body {
+    color: #314659;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    line-height: 1.5;
+    background: #fff;
+    -webkit-transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.docsContainer p {
+    line-height: 2;
+}
+.docsContainer h1 {
+    color: #0d1a26;
+    font-size: 26px;
+}
+.docsContainer h2 {
+    color: #0d1a26;
+    font-size: 20px;
+}
+.docsContainer h3 {
+    color: #0d1a26;
+    font-size: 18px;
 }
