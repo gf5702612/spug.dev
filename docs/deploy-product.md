@@ -13,7 +13,7 @@ title: 生产环境部署
 以下安装步骤假设项目部署在一台 `Centos7` 系统的 `/data/spug` 目录下。
 
 ### 1. Clone项目代码
-
+前端可直接 [下载](https://github.com/openspug/spug/releases) 已编译打包后的压缩包
 ```shell script
 git clone https://github.com/openspug/spug /data/spug
 
