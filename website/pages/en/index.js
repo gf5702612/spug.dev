@@ -64,9 +64,8 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href="https://demo.spug.dev" target="_blank">预览</Button>
+            <Button href={docUrl('about-spug')}>开始使用</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -149,16 +148,16 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
+            content: '前后端完全开源，方便二次开发',
             image: `${baseUrl}img/undraw_react.svg`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: '开源免费',
           },
           {
-            content: 'The content of my second feature',
+            content: '无 Agent 设计，部署方便快捷',
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: '轻松部署',
           },
         ]}
       </Block>

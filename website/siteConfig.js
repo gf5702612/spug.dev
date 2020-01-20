@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'Spug ', // Title for your website.
-  tagline: '灵活、强大的开源自动化运维平台',
+  tagline: '灵活、强大、功能全面的开源运维平台',
   url: 'https://your-docusaurus-test-site.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
