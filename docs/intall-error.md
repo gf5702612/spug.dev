@@ -61,3 +61,12 @@ cd /data/spug/spug_api
 source venv/bin/activate
 python manage.py runmonitor
 ```
+
+### `macOS` 如何使用 `Mysql` 替代默认的 `Sqlite` 数据库？
+需要安装 `mysqlclient` 数据库驱动库，可通过以下步骤安装
+```shell script
+brew install mysql-client
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
+pip install mysqlclient
+```
