@@ -13,6 +13,10 @@ title: 安装问题
 需要安装 `Redis`，如果安装的 `Redis` 不是监听在 `127.0.0.1` 需要修改配置文件 `spug_api/spug/settings.py`
 指定 `Redis` 的 Host，配置中的 `CACHES` 和 `CHANNEL_LAYERS` 均使用了 `Redis`。
 
+### 添加主机报错 `Exception: not a vaild RSA private key file`
+当 `Spug` 生成的密钥对无法通过验证时，会尝试读取系统的 `~/.ssh/` 目录下的密钥进行验证，这个报错一般是在读取系统密钥时出错。 可以尝试先移除系统
+的密钥，然后再操作添加主机，等添加完成后再恢复原有的密钥。
+
 ### 如何配置使用带密码的 `Redis` 服务？
 假设 `Redis` 密码为 `foo123`，则需要更改以配置文件 `spug_api/spug/settings.py` 或者 `overrides.py` 如下内容
 ```shell script
