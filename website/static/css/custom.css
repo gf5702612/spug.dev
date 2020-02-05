@@ -33,18 +33,26 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 .docsContainer p {
     line-height: 2;
 }
+
 .docsContainer h1 {
     color: #0d1a26;
     font-size: 26px;
 }
+
 .docsContainer h2 {
     color: #0d1a26;
     font-size: 20px;
 }
+
 .docsContainer h3 {
     color: #0d1a26;
     font-size: 16px;
+}
+
+blockquote {
+  font-size: 14px;
 }
