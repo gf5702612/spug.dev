@@ -19,6 +19,7 @@ title: 安装问题
 
 ### 如何配置使用带密码的 `Redis` 服务？
 假设 `Redis` 密码为 `foo123`，则需要更改以配置文件 `spug_api/spug/settings.py` 或者 `overrides.py` 如下内容
+> 自定义的配置可以在 `spug_api/spug/` 目录下创建 `overrides.py` 文件来覆盖默认的配置。
 ```shell script
 vi spug_api/spug/settings.py
 
