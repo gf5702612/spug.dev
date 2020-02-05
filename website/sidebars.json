@@ -2,7 +2,8 @@
   "docs": {
     "关于Spug": [
       "about-spug",
-      "change-log"
+      "change-log",
+      "update-docs"
     ],
     "快速开始": [
       "install",
