@@ -47,5 +47,10 @@
     "进阶指南": [
       "deploy-product"
     ]
+  },
+  "apis": {
+    "API": [
+      "apis"
+    ]
   }
 }

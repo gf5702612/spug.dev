@@ -39,7 +39,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'about-spug', label: '文档'},
-    {doc: 'install', label: 'API'},
+    {doc: 'apis', label: 'API'},
     {page: 'help', label: '帮助'}
   ],
 
