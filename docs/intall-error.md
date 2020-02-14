@@ -5,6 +5,12 @@ title: 安装问题
 
 ## 常见安装问题
 
+### 执行数据初始化命令 `python manage.py initdb` 报错
+一般有以下两种情况
+    
+- `Django` 版本使用了 3.x 的版本，我们仅执行 2.2.x 版本，安装依赖推荐使用文档中的 `pip install -r requirements.txt` 来安装
+- 系统的 Sqlite 版本太低，`Django 2.2` Sqlite 的版本最低要求为 3.8.3 [参见文档](https://docs.djangoproject.com/en/2.2/releases/2.2/)。
+
 ### 登录报错 `请求失败: 504 Gateway Timeout`
 请确保 api 服务是否启动，如果已启动则可以通过控制台查看是否监听在 `8000` 端口，如果不是 `8000` 端口可以改为 `8000` 端口或者修改前端项目的
 `spug/spug_web/src/setupProxy.js` 文件中的 `target` 值为你的 api 服务的监听地址和端口。
