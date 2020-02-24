@@ -125,12 +125,12 @@ server {
 # 设置开机启动
 systemctl enable nginx
 systemctl enable redis
-systemctl enable supervisor
+systemctl enable supervisord
 
 # 启动服务
 systemctl restart nginx
 systemctl restart redis
-systemctl restart supervisor
+systemctl restart supervisord
 ```
 
 ### 5. 访问测试
