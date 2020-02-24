@@ -8,7 +8,7 @@ title: 安装问题
 ### 执行数据初始化命令 `python manage.py initdb` 报错
 一般有以下两种情况
     
-- `Django` 版本使用了 3.x 的版本，我们仅执行 2.2.x 版本，安装依赖推荐使用文档中的 `pip install -r requirements.txt` 来安装
+- `Django` 版本使用了 3.x 的版本，我们仅支持 2.2.x 版本，安装依赖推荐使用文档中的 `pip install -r requirements.txt` 来安装
 - 系统的 Sqlite 版本太低，`Django 2.2` Sqlite 的版本最低要求为 3.8.3 [参见文档](https://docs.djangoproject.com/en/2.2/releases/2.2/)。
 
 ### `Nginx` 访问前端文件提示无权限问题
