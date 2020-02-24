@@ -94,7 +94,7 @@ redirect_stderr = true
 vi /etc/nginx/conf.d/ops.conf
 server {
         listen 80;
-        server_name _;
+        server_name _;  # 修改为自定义的访问域名
         root /data/spug/spug_web/build/;
 
         location ^~ /api/ {
@@ -119,6 +119,8 @@ server {
         error_page 404 /index.html;
 }
 ```
+> 注意：如果你没有在新建的 `ops.conf` 中指定 `server_name` 则需要把 `/etc/nginx/nginx.conf` 中默认的 `server` 块注释或删除后才能正常访问，
+> 否则会打开 Nginx 默认页面。
 
 ### 4. 启动服务
 ```shell script
