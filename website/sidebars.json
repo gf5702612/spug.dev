@@ -45,7 +45,8 @@
       }
     ],
     "进阶指南": [
-      "deploy-product"
+      "deploy-product",
+      "update-version"
     ]
   },
   "apis": {
