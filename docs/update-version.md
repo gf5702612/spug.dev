@@ -11,9 +11,9 @@ shell> cd spug && git pull
 2、更新表结构
 
 mysql> ALTER TABLE `spug`.`users` 
-ADD COLUMN `type` varchar(20) NULL DEFAULT "系统用户" AFTER `password_hash`,
+ADD COLUMN `type` varchar(20) NULL DEFAULT "default" AFTER `password_hash`,
 DROP INDEX `username`;
 
-mysql> update `spug`.`users` set type='系统用户';
+mysql> update `spug`.`users` set type='default';
 ```
 
