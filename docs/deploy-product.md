@@ -23,7 +23,7 @@ tar xf spug_web.tar.gz -C /data/spug/spug_web/build;
 
 ### 2. 创建运行环境
 ```shell script
-yum install mariadb-devel python3-devel gcc
+yum install mariadb-devel python3-devel gcc openldap-devel redis
 cd /data/spug/spug_api
 python3 -m venv venv
 source venv/bin/activate

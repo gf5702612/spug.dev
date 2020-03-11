@@ -1,5 +1,5 @@
 ---
-id: docker-install
+id: install-docker
 title: Docker安装
 ---
 

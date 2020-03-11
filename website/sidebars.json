@@ -6,7 +6,7 @@
       "update-docs"
     ],
     "快速开始": [
-      "docker-install",
+      "install-docker",
       "install",
       "install-error",
       "faq"
