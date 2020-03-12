@@ -15,27 +15,33 @@ title: 生产环境部署
 ### 1. Clone项目代码
 前端可直接 [下载](https://github.com/openspug/spug/releases) 已编译打包后的压缩包
 ```shell script
-git clone https://github.com/openspug/spug /data/spug
-
-# 下载已编译打包后的前端项目
-tar xf spug_web_x.x.x.tar.gz -C /data/spug/spug_web/build;
+$ git clone https://github.com/openspug/spug /data/spug
+```
+### 2. 下载已编译打包后的前端项目
+```
+$ tar xf spug_web_x.x.x.tar.gz -C /data/spug/spug_web/build;
 ```
 
-### 2. 创建运行环境
+### 3. 创建运行环境
 ```shell script
-yum install mariadb-devel python3-devel gcc openldap-devel redis
-cd /data/spug/spug_api
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-pip install gunicorn mysqlclient
+# 安装依赖
+$ yum install mariadb-devel python3-devel gcc openldap-devel redis nginx supervisor
+
+# 创建虚拟环境
+$ cd /data/spug/spug_api
+$ python3 -m venv venv
+$ source venv/bin/activate
+
+# 安装python包
+$ pip install -r requirements.txt
+$ pip install gunicorn mysqlclient
 ```
 
-### 3. 修改配置
-默认使用的 `Sqlite` 数据库，通过修改配置使用 `MYSQL`。
-> 可以通过在 `spug_api/spug/` 目录下创建 `overrides.py` 文件来覆盖默认的配置，避免修改 `settings.py` 以便于后期获取新版本。
+### 4. 修改后端配置
+后端默认使用的 `Sqlite` 数据库，通过修改配置使用 `MYSQL` 作为后端数据库
+> 在 `spug_api/spug/` 目录下创建 `overrides.py` 文件，启动后端服务后会自动覆盖默认的配置，避免直接修改 `settings.py` 以便于后期获取新版本。
 ```shell script
-vi spug/overrides.py
+$ vi spug_api/spug/overrides.py
 
 DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1']
@@ -56,11 +62,25 @@ DATABASES = {
 }
 ```
 
-### 4. 安装运行依赖
+### 5. 初始化数据库
 ```shell script
-yum install nginx supervisor redis
-# 创建 supervisor 配置
-vi /etc/supervisord.d/ops.ini
+$ cd /data/spug/spug_api
+$ python manage.py initdb
+````
+### 6. 创建默认管理员账户
+```shell script
+$ python manage.py useradd -u admin -p spug.dev -s -n 管理员
+
+# -u 用户名
+# -p 密码
+# -s 超级管理员
+# -n 用户昵称
+```
+
+### 7. 创建启动服务脚本
+```shell script
+$ vi /etc/supervisord.d/spug.ini
+
 [program:spug-api]
 command = bash /data/spug/spug_api/tools/start-api.sh
 autostart = true
@@ -91,16 +111,19 @@ autostart = true
 stdout_logfile = /data/spug/spug_api/logs/scheduler.log
 redirect_stderr = true
 
-# 创建 nginx 配置
-vi /etc/nginx/conf.d/ops.conf
+```
+
+### 8. 创建前端nginx配置文件
+```
+$ vi /etc/nginx/conf.d/spug.conf
+
 server {
         listen 80;
-        server_name _;  # 修改为自定义的访问域名
+        server_name _;     # 修改为自定义的访问域名
         root /data/spug/spug_web/build/;
 
         location ^~ /api/ {
                 rewrite ^/api(.*) $1 break;
-
                 proxy_pass http://127.0.0.1:9001;
                 proxy_redirect off;
                 proxy_set_header X-Real-IP $remote_addr;
@@ -108,7 +131,6 @@ server {
 
         location ^~ /api/ws/ {
                 rewrite ^/api(.*) $1 break;
-
                 proxy_pass http://127.0.0.1:9002;
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
@@ -116,29 +138,29 @@ server {
                 proxy_set_header X-Real-IP $remote_addr;
         }
 
-
         error_page 404 /index.html;
 }
 ```
-> 注意：如果你没有在新建的 `ops.conf` 中指定 `server_name` 则需要把 `/etc/nginx/nginx.conf` 中默认的 `server` 块注释或删除后才能正常访问，
+> 注意：如果你没有在 `spug.conf` 中指定 `server_name` 则需要把 `/etc/nginx/nginx.conf` 中默认的 `server` 块注释或删除后才能正常访问，
 > 否则会打开 Nginx 默认页面。
 
-### 4. 启动服务
+### 9. 启动服务
 ```shell script
 # 设置开机启动
-systemctl enable nginx
-systemctl enable redis
-systemctl enable supervisord
+$ systemctl enable nginx
+$ systemctl enable redis
+$ systemctl enable supervisord
 
 # 启动服务
-systemctl restart nginx
-systemctl restart redis
-systemctl restart supervisord
+$ systemctl restart nginx
+$ systemctl restart redis
+$ systemctl restart supervisord
 ```
 
-### 5. 访问测试
+### 10. 访问测试
 通过浏览器访问测试。
 
-## 安全建议
-- 请确保安装的 `Redis` 仅监听在 `127.0.0.1`。如果需要使用密码认证的 `Redis` 请参考 [如何配置使用带密码的 Redis 服务？](https://spug.dev/docs/install-error/#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%B8%A6%E5%AF%86%E7%A0%81%E7%9A%84-redis-%E6%9C%8D%E5%8A%A1%EF%BC%9F)
-- 确保服务端接收到请求 `HTTP Header` 的 ` X-Real-IP` 为真实的客户端地址，`Spug` 会使用该IP提高安全性（当登用户的IP发生变化时Token自动失效）。
+
+### 11. 安全建议
+> - 请确保安装的 `Redis` 仅监听在 `127.0.0.1`。如果需要使用密码认证的 `Redis` 请参考 [如何配置使用带密码的 Redis 服务？](https://spug.dev/docs/install-error/#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%B8%A6%E5%AF%86%E7%A0%81%E7%9A%84-redis-%E6%9C%8D%E5%8A%A1%EF%BC%9F)
+> - 确保服务端接收到请求 `HTTP Header` 的 ` X-Real-IP` 为真实的客户端地址，`Spug` 会使用该IP提高安全性（当登用户的IP发生变化时Token自动失效）。

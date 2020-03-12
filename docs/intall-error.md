@@ -30,7 +30,7 @@ title: 安装问题
 假设 `Redis` 密码为 `foo123`，则需要更改以配置文件 `spug_api/spug/settings.py` 或者 `overrides.py` 如下内容
 > 自定义的配置可以在 `spug_api/spug/` 目录下创建 `overrides.py` 文件来覆盖默认的配置。
 ```shell script
-vi spug_api/spug/settings.py
+$ vi spug_api/spug/settings.py
 
 CACHES = {
     "default": {
@@ -55,32 +55,32 @@ CHANNEL_LAYERS = {
 ### 批量执行的任务卡住无法看到执行输出
 批量执行功能需要启动额外服务，通过以下命令启动，以下操作命令基于 [标准安装](/docs/install) 文档的环境
 ```shell script
-cd /data/spug/spug_api
-source venv/bin/activate
-python manage.py runworker ssh_exec
+$ cd /data/spug/spug_api
+$ source venv/bin/activate
+$ python manage.py runworker ssh_exec
 ```
 
 ### 任务计划模块添加的任务不会执行
 任务计划功能需要启动额外的服务，通过以下命令启动，以下操作命令基于 [标准安装](/docs/install) 文档的环境
 ```shell script
-cd /data/spug/spug_api
-source venv/bin/activate
-python manage.py runscheduler
+$ cd /data/spug/spug_api
+$ source venv/bin/activate
+$ python manage.py runscheduler
 ```
 
 ### 监控中心模块添加的监控任务不会执行
 监控中心功能需要启动额外的服务，通过以下命令启动，以下操作命令基于 [标准安装](/docs/install) 文档的环境
 ```shell script
-cd /data/spug/spug_api
-source venv/bin/activate
-python manage.py runmonitor
+$ cd /data/spug/spug_api
+$ source venv/bin/activate
+$ python manage.py runmonitor
 ```
 
 ### `macOS` 如何使用 `Mysql` 替代默认的 `Sqlite` 数据库？
 需要安装 `mysqlclient` 数据库驱动库，可通过以下步骤安装
 ```shell script
-brew install mysql-client
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
-pip install mysqlclient
+$ brew install mysql-client
+$ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+$ export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
+$ pip install mysqlclient
 ```

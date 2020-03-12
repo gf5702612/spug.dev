@@ -16,18 +16,18 @@ title: Docker安装
 ### 1. 安装docker
 
 ```shell script
-yum install docker
+$ yum install docker
 ```
 
 ### 2. 拉取镜像
 ```shell script
-docker pull reg.qiniu.com/openspug/spug
+$ docker pull reg.qiniu.com/openspug/spug
 ```
 
 ### 3. 启动
 Docker镜像内部使用的 `Sqlite` 数据库。
 ```shell script
-docker run -d -p 80:80 reg.qiniu.com/openspug/spug
+$ docker run -d -p 80:80 reg.qiniu.com/openspug/spug
 ```
 
 ### 4. 访问测试
