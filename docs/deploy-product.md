@@ -18,7 +18,7 @@ title: 生产环境部署
 git clone https://github.com/openspug/spug /data/spug
 
 # 下载已编译打包后的前端项目
-tar xf spug_web.tar.gz -C /data/spug/spug_web/build;
+tar xf spug_web_x.x.x.tar.gz -C /data/spug/spug_web/build;
 ```
 
 ### 2. 创建运行环境
@@ -33,9 +33,10 @@ pip install gunicorn mysqlclient
 
 ### 3. 修改配置
 默认使用的 `Sqlite` 数据库，通过修改配置使用 `MYSQL`。
-> 自定义的配置可以在 `spug_api/spug/` 目录下创建 `overrides.py` 文件来覆盖默认的配置。
+> 可以通过在 `spug_api/spug/` 目录下创建 `overrides.py` 文件来覆盖默认的配置，避免修改 `settings.py` 以便于后期获取新版本。
 ```shell script
 vi spug/overrides.py
+
 DEBUG = False
 ALLOWED_HOSTS = ['127.0.0.1']
 
