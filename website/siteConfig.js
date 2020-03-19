@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Spug ', // Title for your website.
+  title: '', // Title for your website.
   tagline: '灵活、强大、功能全面的开源运维平台',
   url: 'https://your-docusaurus-test-site.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
@@ -31,7 +31,7 @@ const siteConfig = {
 
   // Used for publishing and more
   projectName: 'spug',
-  organizationName: 'Open Spug',
+  organizationName: 'OpenSpug',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -47,9 +47,10 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/logo-spug-txt-white.png',
+  // headerIcon: 'img/oss_logo.png',
+  footerIcon: 'img/logo-spug.png',
+  favicon: 'img/logo-spug.ico',
 
   /* Colors for website */
   colors: {
@@ -72,7 +73,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} By Open Spug`,
+  copyright: `Copyright © ${new Date().getFullYear()} By OpenSpug`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

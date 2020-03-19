@@ -26,7 +26,7 @@ $ git clone https://github.com/openspug/spug /data/spug
 $ cd /data/spug/spug_api
 $ python3 -m venv venv
 $ source venv/bin/activate
-$ pip install -r requirements.txt
+$ pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/
 ```
 
 ### 3. 初始化数据库
@@ -48,7 +48,7 @@ $ python manage.py useradd -u admin -p spug.dev -s -n 管理员
 ```shell script
 $ python manage.py runserver
 ```
-    
+
 ### 6. 安装前端依赖
 可以把 `npm` 用 `yarn` 或 `cnpm` 代替。
 ```shell script
