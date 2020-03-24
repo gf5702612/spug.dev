@@ -12,43 +12,35 @@ const CompLibrary = require('../../core/CompLibrary.js');
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
-function Help(props) {
+function About(props) {
   const {config: siteConfig, language = ''} = props;
   const {baseUrl, docsUrl} = siteConfig;
   const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
   const langPart = `${language ? `${language}/` : ''}`;
   const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
 
-  const supportLinks = [
-    {
-      content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
-      )})`,
-      title: 'Browse Docs',
-    },
-    {
-      content: 'Ask questions about the documentation and project',
-      title: 'Join the community',
-    },
-    {
-      content: "Find out what's new with this project",
-      title: 'Stay up to date',
-    },
-  ];
 
   return (
     <div className="docMainWrapper wrapper">
       <Container className="mainContainer documentContainer postContainer">
         <div className="post">
           <header className="postHeader">
-            <h1>Need help?</h1>
+            <h2>关于Spug</h2>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
-          <GridBlock contents={supportLinks} layout="threeColumn" />
+          <p>Spug：麻雀，麻雀虽小，五脏俱全。</p>
+          <p>Spug是面向中小型企业的运维平台，平台虽小但功能全，灵活强大，可以满足中小企业发布部署，任务调度，批量执行，配置中心，监控报警等管理。</p>
+        </div>
+        <div className="post">
+          <header className="postHeader">
+            <h2>关注Spug公众号</h2>
+          </header>
+          <div className="abooutSpugQrcode">
+            <img src='http://image.qbangmang.com/weixin-spug-8.jpg' alt="关注我们"></img>
+          </div>
         </div>
       </Container>
     </div>
   );
 }
 
-module.exports = Help;
+module.exports = About;

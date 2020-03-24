@@ -40,7 +40,8 @@ const siteConfig = {
   headerLinks: [
     {doc: 'about-spug', label: '文档'},
     {doc: 'apis', label: 'API'},
-    {page: 'help', label: '帮助'}
+    {page: 'about', label: '关于'},
+    {page: 'sponsorship', label: '赞助'}
   ],
 
   // If you have users set above, you add it here:

@@ -44,25 +44,19 @@ class Footer extends React.Component {
             <a href={this.docUrl('host-manage', this.props.language)}>
               使用手册
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
+            <a href={this.docUrl('apis', this.props.language)}>
               API 文档
             </a>
           </div>
           <div>
             <h5>社区</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              帮助
-            </a>
             <a
-              href="https://stackoverflow.com/questions/tagged/"
+              href="https://github.com/openspug"
               target="_blank"
-              rel="noreferrer noopener">
-              用户展示
+              rel="author">
+              组织
             </a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noreferrer noopener">
+            <a href={this.pageUrl('about.html', this.props.language)}>
               关于
             </a>
           </div>
