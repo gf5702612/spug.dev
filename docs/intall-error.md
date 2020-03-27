@@ -84,3 +84,6 @@ $ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 $ export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
 $ pip install mysqlclient
 ```
+
+### 使用 `SqlServer` 数据库
+感谢 @xiongwu1 提供的支持，请参考 [#38](https://github.com/openspug/spug/issues/38)
