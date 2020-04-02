@@ -71,8 +71,8 @@ $ npm start
 
 ### 9. 其他可选服务
 通过以上步骤已经可以正常访问 `Spug` 了，但一些功能依赖额外的服务，请参考以下文档
-- [批量执行的任务卡住无法看到执行输出](http://localhost:3001/docs/install-error#%E6%89%B9%E9%87%8F%E6%89%A7%E8%A1%8C%E7%9A%84%E4%BB%BB%E5%8A%A1%E5%8D%A1%E4%BD%8F%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%B0%E6%89%A7%E8%A1%8C%E8%BE%93%E5%87%BA)
-- [任务计划模块添加的任务不会执行](http://localhost:3001/docs/install-error#%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E6%A8%A1%E5%9D%97%E6%B7%BB%E5%8A%A0%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%B8%8D%E4%BC%9A%E6%89%A7%E8%A1%8C)
-- [监控中心模块添加的监控任务不会执行](http://localhost:3001/docs/install-error#%E7%9B%91%E6%8E%A7%E4%B8%AD%E5%BF%83%E6%A8%A1%E5%9D%97%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%9B%91%E6%8E%A7%E4%BB%BB%E5%8A%A1%E4%B8%8D%E4%BC%9A%E6%89%A7%E8%A1%8C)
+- [批量执行的任务卡住无法看到执行输出](/docs/install-error#%E6%89%B9%E9%87%8F%E6%89%A7%E8%A1%8C%E7%9A%84%E4%BB%BB%E5%8A%A1%E5%8D%A1%E4%BD%8F%E6%97%A0%E6%B3%95%E7%9C%8B%E5%88%B0%E6%89%A7%E8%A1%8C%E8%BE%93%E5%87%BA)
+- [任务计划模块添加的任务不会执行](/docs/install-error#%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E6%A8%A1%E5%9D%97%E6%B7%BB%E5%8A%A0%E7%9A%84%E4%BB%BB%E5%8A%A1%E4%B8%8D%E4%BC%9A%E6%89%A7%E8%A1%8C)
+- [监控中心模块添加的监控任务不会执行](/docs/install-error#%E7%9B%91%E6%8E%A7%E4%B8%AD%E5%BF%83%E6%A8%A1%E5%9D%97%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%9B%91%E6%8E%A7%E4%BB%BB%E5%8A%A1%E4%B8%8D%E4%BC%9A%E6%89%A7%E8%A1%8C)
 ## 常见安装问题
 请参考 [安装问题](/docs/install-error)
