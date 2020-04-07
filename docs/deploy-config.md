@@ -44,6 +44,9 @@ title: 发布配置
 - `SPUG_ENV_ID` 发布环境ID
 - `SPUG_ENV_KEY` 发布环境的Key
 - `SPUG_VERSION` 发布内部版本
+- `SPUG_DEPLOY_ID` 发布配置ID（v2.2.3新增）
 - `SPUG_DEPLOY_TYPE` 发布类型（"1" 为正常发布，"2" 为回滚）
 - `SPUG_API_TOKEN` 访问配置中心获取配置的 `API_TOKEN`
-
+以下变量仅当在主机执行时有效
+- `SPUG_HOST_ID` 当前执行主机的ID（v2.2.3新增）
+- `SPUG_HOST_NAME` 当前执行主机的IP/域名（v2.2.3新增）
