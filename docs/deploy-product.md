@@ -37,8 +37,8 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 
 # 安装python包
-$ pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/
-$ pip install gunicorn mysqlclient -i http://mirrors.aliyun.com/pypi/simple/
+$ pip install -r requirements.txt -i https://pypi.doubanio.com/simple/
+$ pip install gunicorn mysqlclient -i https://pypi.doubanio.com/simple/
 ```
 
 ### 4. 修改后端配置
