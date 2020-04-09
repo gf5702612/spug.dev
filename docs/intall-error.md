@@ -3,7 +3,7 @@ id: install-error
 title: 安装问题
 ---
 
-## 常见安装问题
+## 常见问题
 
 ### 执行数据初始化命令 `python manage.py initdb` 报错
 一般有以下两种情况
@@ -53,6 +53,19 @@ CHANNEL_LAYERS = {
         },
     },
 }
+```
+
+### 使用 `nohup` 启动后台进程页面一直在转圈不会结束？
+在 [`批量执行`](/docs/batch-exec/) 或 [`发布配置`](/docs/deploy-config/) 等的执行脚本中以 `nohup` 或 `&` 的方式启动后台子进程时需要
+把命令的标准输出重定向至 `/dev/null`，例如以下启动 `Tomcat` 的命令：
+```shell script
+cd web/WEB-INF/
+nohup ./startup.sh &
+```
+把上述命令改为：
+```shell script
+cd web/WEB-INF/
+nohup ./startup.sh > /dev/null &
 ```
 
 ### 批量执行的任务卡住无法看到执行输出
