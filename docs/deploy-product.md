@@ -42,7 +42,7 @@ $ pip install gunicorn mysqlclient -i https://pypi.doubanio.com/simple/
 ```
 
 ### 4. 修改后端配置
-后端默认使用的 `Sqlite` 数据库，通过修改配置使用 `MYSQL` 作为后端数据库，[如何使用SqlServer数据库？](http://localhost:3001/docs/install-error#%E4%BD%BF%E7%94%A8-sqlserver-%E6%95%B0%E6%8D%AE%E5%BA%93)
+后端默认使用的 `Sqlite` 数据库，通过修改配置使用 `MYSQL` 作为后端数据库，[如何使用SqlServer数据库？](/docs/install-error#%E4%BD%BF%E7%94%A8-sqlserver-%E6%95%B0%E6%8D%AE%E5%BA%93)
 > 在 `spug_api/spug/` 目录下创建 `overrides.py` 文件，启动后端服务后会自动覆盖默认的配置，避免直接修改 `settings.py` 以便于后期获取新版本。
 ```shell script
 $ vi spug_api/spug/overrides.py
@@ -167,5 +167,5 @@ $ systemctl restart supervisord
 
 
 ### 11. 安全建议
-> - 请确保安装的 `Redis` 仅监听在 `127.0.0.1`。如果需要使用密码认证的 `Redis` 请参考 [如何配置使用带密码的 Redis 服务？](https://spug.dev/docs/install-error/#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%B8%A6%E5%AF%86%E7%A0%81%E7%9A%84-redis-%E6%9C%8D%E5%8A%A1%EF%BC%9F)
+> - 请确保安装的 `Redis` 仅监听在 `127.0.0.1`。如果需要使用密码认证的 `Redis` 请参考 [如何配置使用带密码的 Redis 服务？](/docs/install-error/#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%B8%A6%E5%AF%86%E7%A0%81%E7%9A%84-redis-%E6%9C%8D%E5%8A%A1%EF%BC%9F)
 > - 确保服务端接收到请求 `HTTP Header` 的 ` X-Real-IP` 为真实的客户端地址，`Spug` 会使用该IP提高安全性（当登用户的IP发生变化时Token自动失效）。
