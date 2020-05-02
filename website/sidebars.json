@@ -46,6 +46,7 @@
       }
     ],
     "进阶指南": [
+      "deploy-product-script",
       "deploy-product",
       "update-version"
     ]

@@ -1,6 +1,6 @@
 ---
 id: deploy-product
-title: 生产环境部署
+title: 生产环境手动部署
 ---
 
 ## 准备环境
