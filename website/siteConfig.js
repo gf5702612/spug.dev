@@ -40,6 +40,8 @@ const siteConfig = {
   headerLinks: [
     {doc: 'about-spug', label: '文档'},
     {doc: 'apis', label: 'API'},
+    {href: 'https://github.com/openspug/spug', label: 'GitHub', external: true},
+    {href: 'https://gitee.com/openspug/spug', label: 'Gitee', external: true},
     {page: 'about', label: '关于'},
     {page: 'sponsorship', label: '赞助'}
   ],
