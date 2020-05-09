@@ -53,7 +53,7 @@ $ python manage.py runserver
 可以把 `npm` 用 `yarn` 或 `cnpm` 代替。
 ```shell script
 $ cd /data/spug/spug_web
-$ npm install
+$ npm install --registry=https://registry.npm.taobao.org
 ```
 
 ### 7. 启动前端

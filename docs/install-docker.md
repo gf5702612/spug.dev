@@ -2,9 +2,6 @@
 id: install-docker
 title: Docker安装
 ---
-
-> 此安装文档适合快速体验spug功能，如果你是在生产环境部署，请参考 [生产环境部署](/docs/deploy-product) 文档。
-
 ## 依赖环境
 
 - Docker
@@ -26,8 +23,14 @@ $ docker pull reg.qiniu.com/openspug/spug
 
 ### 3. 启动
 Docker镜像内部使用的 `Sqlite` 数据库。
+> 如果需要持久化存储代码和数据，可以添加：-v 映射容器内/data路径
 ```shell script
 $ docker run -d -p 80:80 reg.qiniu.com/openspug/spug
+
+# 持久化存储启动命令：
+# mydata是本地磁盘路径，/data是容器内代码和数据初始化存储的路径
+
+$ docker run -d -p 80:80 -v /mydata/:/data reg.qiniu.com/openspug/spug
 ```
 
 ### 4. 访问测试

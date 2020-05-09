@@ -2,14 +2,20 @@
 id: update-version
 title: 版本升级
 ---
-## 更新到2.2.x 版本
+## 命令安装，版本更新
 ```
-# 更新代码
-$ cd spug && git pull && checkout v2.2.0
+# 默认更新到最新版本
 
-# 更新表结构
 $ cd spug_api
 $ source venv/bin/activate
-$ python manage.py initdb
+$ python manage.py update
+
 ```
 
+## Docker安装，版本更新
+```
+# 默认更新到最新版本
+# $CONTAINERID是你的容器ID
+
+# docker exec $CONTAINERID python manage.py update 
+```
