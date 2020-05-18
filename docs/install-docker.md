@@ -14,6 +14,7 @@ title: Docker安装
 
 ```shell script
 $ yum install docker
+$ systemctl start docker
 ```
 
 ### 2. 拉取镜像
