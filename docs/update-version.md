@@ -17,7 +17,7 @@ $ python manage.py update
 # 默认更新到最新版本
 # $CONTAINERID是你的容器ID
 
-# docker exec -i $CONTAINERID python manage.py update 
+# docker exec -i $CONTAINERID /data/spug/spug_api/manage.py update 
 # 更新完成后重启容器
 # docker restart $CONTAINERID
 ```
