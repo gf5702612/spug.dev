@@ -18,6 +18,7 @@ $ systemctl start docker
 ```
 
 ### 2. 拉取镜像
+> 阿里云的镜像与 [Docker hub](https://hub.docker.com/r/openspug/spug) 同步更新，国内用户建议使用阿里云的镜像。
 ```shell script
 $ docker pull registry.aliyuncs.com/openspug/spug
 ```
