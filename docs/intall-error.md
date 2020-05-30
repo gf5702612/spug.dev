@@ -1,9 +1,9 @@
 ---
 id: install-error
-title: 安装问题
+title: 常见问题
 ---
 
-## 常见问题
+## 安装部署常见问题
 
 ### 执行数据初始化命令 `python manage.py initdb` 报错
 一般有以下两种情况
@@ -55,6 +55,11 @@ CHANNEL_LAYERS = {
 }
 ```
 
+### 使用 `SqlServer` 数据库
+感谢 @xiongwu1 提供的支持，请参考 [#38](https://github.com/openspug/spug/issues/38)
+
+## 使用常见问题
+
 ### 使用 `nohup` 启动后台进程页面一直在转圈不会结束？
 在 [`批量执行`](/docs/batch-exec/) 或 [`发布配置`](/docs/deploy-config/) 等的执行脚本中以 `nohup` 或 `&` 的方式启动后台子进程时需要
 把命令的标准输出重定向至 `/dev/null`，例如以下启动 `Tomcat` 的命令：
@@ -68,7 +73,13 @@ cd web/WEB-INF/
 nohup ./startup.sh > /dev/null &
 ```
 
-### 批量执行的任务卡住无法看到执行输出
+### 能否使用自己的密钥对？
+可以，`v2.3.0` 版本开始已支持上传自定义密钥对，可以在 `系统管理 \ 系统设置 \ 密钥设置` 中，自行上传密钥。
+
+## 二次开发常见问题
+
+
+### 标准安装批量执行的任务卡住无法看到执行输出
 批量执行功能需要启动额外服务，通过以下命令启动，以下操作命令基于 [标准安装](/docs/install) 文档的环境
 ```shell script
 $ cd /data/spug/spug_api
@@ -76,7 +87,7 @@ $ source venv/bin/activate
 $ python manage.py runworker ssh_exec
 ```
 
-### 任务计划模块添加的任务不会执行
+### 标准安装任务计划模块添加的任务不会执行
 任务计划功能需要启动额外的服务，通过以下命令启动，以下操作命令基于 [标准安装](/docs/install) 文档的环境
 ```shell script
 $ cd /data/spug/spug_api
@@ -84,7 +95,7 @@ $ source venv/bin/activate
 $ python manage.py runscheduler
 ```
 
-### 监控中心模块添加的监控任务不会执行
+### 标准安装监控中心模块添加的监控任务不会执行
 监控中心功能需要启动额外的服务，通过以下命令启动，以下操作命令基于 [标准安装](/docs/install) 文档的环境
 ```shell script
 $ cd /data/spug/spug_api
@@ -100,6 +111,3 @@ $ export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 $ export LDFLAGS="-I/usr/local/opt/openssl/include -L/usr/local/opt/openssl/lib"
 $ pip install mysqlclient
 ```
-
-### 使用 `SqlServer` 数据库
-感谢 @xiongwu1 提供的支持，请参考 [#38](https://github.com/openspug/spug/issues/38)
