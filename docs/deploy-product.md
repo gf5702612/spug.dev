@@ -128,6 +128,7 @@ server {
         listen 80;
         server_name _;     # 修改为自定义的访问域名
         root /data/spug/spug_web/build/;
+        client_max_body_size: 20m;   # 该值会影响文件管理器可上传文件的大小限制，请合理调整
 
         location ^~ /api/ {
                 rewrite ^/api(.*) $1 break;
