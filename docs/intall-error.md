@@ -76,6 +76,36 @@ nohup ./startup.sh > /dev/null &
 ### 能否使用自己的密钥对？
 可以，`v2.3.0` 版本开始已支持上传自定义密钥对，可以在 `系统管理 \ 系统设置 \ 密钥设置` 中，自行上传密钥。
 
+### 新建常规发布申请 `git clone` 错误
+`Spug` 无法提供交互式的输入账户密码登录git仓库的能力，所以你要确保 `Spug` 可以不需要输入密码直接能够访问仓库。
+如果是公开的仓库 `http/https/ssh` 都可以，但如果是私有仓库只能使用 `ssh` 协议，配置密钥来访问。特别要注意的是，如果你是通过docker方式部署的
+则需要确保在容器内可以访问仓库，而不是在宿主机上。
+
+### 主机 `Console` 或执行发布页面无内容
+这种情况大部分都是 `Websocket` 连接建立失败了，一般出现在部署时自己加了一层 nginx 之类的代理工具，这些代理工具默认无法处理 `Weboscket` 请求，
+这就需要你配置其支持转发 `Websocket` 请求，下边给个 `Nginx` 的例子，这里假设你用 docker 部署的 `Spug`, 映射了宿主机的 8000 端口：
+```shell script
+server {
+  listen 80;
+  server_name xxx.xxx.xxx;
+  
+  location / {
+    proxy_pass http://127.0.0.1:8000;
+    proxy_set_header X-Real-IP $remote_addr;
+  }
+ 
+  location ^~ /api/ws/ {
+    proxy_pass http://127.0.0.1:8000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+    proxy_set_header X-Real-IP $remote_addr;
+  }
+
+  error_page 404 /index.html;
+}
+```
+
 ## 二次开发常见问题
 
 
