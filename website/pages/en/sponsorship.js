@@ -25,7 +25,7 @@ function Sponsorship(props) {
         <div className="post">
           <header className="postHeader">
             <h2>赞助 Spug 的研发</h2>
-            <p>Spug 是采用 MIT 许可的开源项目，使用完全免费。
+            <p>Spug 是采用 AGPLv3 许可的开源项目，使用完全免费。
             但为了项目能够健康持续的发展下去，我们期望获得相应的资金支持。 你可以通过下列的方法来赞助我们的开发。
             </p>
           </header>
