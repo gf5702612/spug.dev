@@ -28,7 +28,7 @@ function About(props) {
             <h2>关于Spug</h2>
           </header>
           <p>Spug：麻雀，麻雀虽小，五脏俱全。</p>
-          <p>Spug是面向中小型企业的运维平台，平台虽小但功能全，灵活强大，可以满足中小企业发布部署，任务调度，批量执行，配置中心，监控报警等管理。</p>
+          <p>Spug是面向中小型企业设计的轻量级无Agent的自动化运维平台，整合了主机管理、主机批量执行、主机在线终端、文件在线上传下载、应用发布部署、在线任务计划、配置中心、监控、报警等一系列功能。</p>
         </div>
         <div className="post">
           <header className="postHeader">
