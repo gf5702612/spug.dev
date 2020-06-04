@@ -25,6 +25,7 @@ $ curl https://spug.dev/installer/spug-installer | bash
 账户：admin  
 密码：spug.dev
 ```
+> 如果访问时出现 `403 Forbidden` 的错误页面，大部分情况下是 `selinux` 的问题。你可以执行 `setenforce 0` 来临时关闭 `selinux` 测试能否正常访问。 
 
 ## 安全建议
 - 默认安装的 `Redis` 服务监听在 `127.0.0.1` 但未设置密码，如需启用密码认证，请参考 [如何配置使用带密码的 Redis 服务？](/docs/install-error/#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%B8%A6%E5%AF%86%E7%A0%81%E7%9A%84-redis-%E6%9C%8D%E5%8A%A1%EF%BC%9F)
