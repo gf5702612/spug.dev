@@ -34,4 +34,4 @@ $ python manage.py update
 # docker restart $CONTAINERID
 ```
 
-> 注意：Docker 方式部署的因镜像问题无法正常更新到 `v2.3.0`，请直接使用新版镜像并参考新版的 [docker安装](/docs/install-docker) 文档，对此我们非常抱歉。
+> 注意：如果你现在部署的 `v2.2.x` 的版本（如果你现在已经是 `v2.3.x` 则忽略下边的内容），Docker 方式部署的因镜像问题无法正常更新到 `v2.3.0`，请直接使用新版镜像并参考新版的 [docker安装](/docs/install-docker) 文档，对此我们非常抱歉。
