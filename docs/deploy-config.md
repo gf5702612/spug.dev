@@ -52,3 +52,6 @@ title: 发布配置
 以下变量仅当在主机执行时有效
 - `SPUG_HOST_ID` 当前执行主机的ID（v2.2.3新增）
 - `SPUG_HOST_NAME` 当前执行主机的IP/域名（v2.2.3新增）
+- `SPUG_GIT_BRANCH` 本次发布选择的Git分支（v2.3.2新增，常规发布基于分支时有效）
+- `SPUG_GIT_COMMIT_ID` 本次发布选择的Git Commit ID（v2.3.2新增，常规发布基于分支时有效）
+- `SPUG_GIT_TAG` 本次发布的Git Tag（v2.3.2新增，常规发布基于Tag时有效）
