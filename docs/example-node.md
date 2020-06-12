@@ -21,7 +21,7 @@ title: Node项目配置
 或 `yarn` 来安装。这里使用了 [全局环境变量](https://spug.dev/docs/deploy-config/#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F) 中的
 `SPUG_DEPLOY_ID` 来切换到源码目录执行依赖的安装。
 ```shell script
-cd /data/spug/spug_api/repos/2/spug_api/repos/$SPUG_DEPLOY_ID/spug_web
+cd /data/spug/spug_api/repos/$SPUG_DEPLOY_ID/spug_web
 yarn
 ```
 
@@ -29,8 +29,8 @@ yarn
 在这里进行项目的编译工作，该钩子中当前目录即为按发布申请中选择 `Git 分支/版本` 检出后的代码目录，我们需要先把上一步安装依赖生产的 `node_modules`
 目录链接到当前目录（这样可以避免每次都完整的执行`npm install`来重复安装依赖包），然后执行 `yarn build` 来进行项目编译。
 ```shell script
-ln -s ../$SPUG_DEPLOY_ID/spug_web/node_modules ./spug_web/node_modules
 cd spug_web
+ln -s ../../$SPUG_DEPLOY_ID/spug_web/node_modules ./node_modules
 yarn build
 ```
 编译后也就生成了我们在 **文件过滤** 中设置的 `spug_web/build` 目录。
