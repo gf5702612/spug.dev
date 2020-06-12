@@ -51,6 +51,9 @@
         ]
       }
     ],
+    "配置模版": [
+      "example-node"
+    ],
     "进阶指南": [
       "deploy-product-script",
       "deploy-product",
