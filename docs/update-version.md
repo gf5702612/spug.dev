@@ -27,11 +27,12 @@ $ python manage.py update
 ## Docker安装，版本更新
 ```
 # 默认更新到最新版本
-# $CONTAINERID是你的容器ID
+# spug 是容器名称，也可以-i指定容器ID
 
-# docker exec -i spug /data/spug/spug_api/manage.py update 
+$ docker exec -i spug /data/spug/spug_api/manage.py update 
+
 # 更新完成后重启容器
-# docker restart spug
+$ docker restart spug
 ```
 
 > 注意：如果你现在部署的 `v2.2.x` 的版本（如果你现在已经是 `v2.3.x` 则忽略下边的内容），Docker 方式部署的因镜像问题无法正常更新到 `v2.3.0`，请直接使用新版镜像并参考新版的 [docker安装](/docs/install-docker) 文档，对此我们非常抱歉。
