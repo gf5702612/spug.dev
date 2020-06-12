@@ -27,21 +27,21 @@ $ docker pull registry.aliyuncs.com/openspug/spug
 Docker镜像内部使用的 `Mysql` 数据库。
 > 如果需要持久化存储代码和数据，可以添加：-v 映射容器内/data路径
 ```shell script
-$ docker run -d -p 80:80 registry.aliyuncs.com/openspug/spug
+$ docker run -d --name=spug -p 80:80 registry.aliyuncs.com/openspug/spug
 
 # 持久化存储启动命令：
 # mydata是本地磁盘路径，/data是容器内代码和数据初始化存储的路径
 
-$ docker run -d -p 80:80 -v /mydata/:/data registry.aliyuncs.com/openspug/spug
+$ docker run -d --name=spug -p 80:80 -v /mydata/:/data registry.aliyuncs.com/openspug/spug
 ```
 
 ### 4. 初始化
 以下操作会创建一个用户名为 `admin` 密码为 `spug.dev` 的管理员账户，可自行替换管理员账户。
 ```shell script
-$ docker exec $CONTAINER_ID init_spug admin spug.dev
+$ docker exec spug init_spug admin spug.dev
 
 # 执行完毕后需要重启容器
-$ docker restart $CONTAINER_ID
+$ docker restart spug
 ```
 
 ### 4. 访问测试
