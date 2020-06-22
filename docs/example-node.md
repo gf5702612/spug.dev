@@ -9,6 +9,19 @@ title: Node项目配置
 
 ![about](/images/example-node-1.jpg)
 
+## 安装 node(npm)
+如果已安装可跳过该步骤，这里以目前的最新版 `v12.18.1` 为例，如果你使用 Docker 部署的 `Spug`，可参考以下步骤进行安装
+```shell script
+docker exec -it spug sh
+wget https://unofficial-builds.nodejs.org/download/release/v12.18.1/node-v12.18.1-linux-x64-musl.tar.gz
+tar xf node-v12.18.1-linux-x64-musl.tar.gz -C /opt
+echo 'export PATH=$PATH:/opt/node-v12.18.1-linux-x64-musl/bin' > /etc/profile.d/node.sh
+
+# 退出容器并重启容器
+exit
+docker restart spug
+```
+
 ## 文件过滤
 前端项目发布的时候只需要编译后的内容就可以，这里选择了 `包含` 条件，内容为 `spug_web/build`，这样最终发布到目标主机上的代码仅包含
 `spug_web/build`，并不会把 `spug_api` 及 `spug_web` 中的前端源代码发布出去。

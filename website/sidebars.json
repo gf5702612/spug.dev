@@ -52,7 +52,8 @@
       }
     ],
     "发布模版": [
-      "example-node"
+      "example-node",
+      "example-java"
     ],
     "进阶指南": [
       "deploy-product-script",
