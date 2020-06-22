@@ -21,6 +21,21 @@ echo 'export PATH=$PATH:/opt/node-v12.18.1-linux-x64-musl/bin' > /etc/profile.d/
 exit
 docker restart spug
 ```
+> 注意：如果你使用的镜像版本低于 2.3.4（https://hub.docker.com/r/openspug/spug/tags 可在这里查看版本信息），则还需要在容器内执行以下操作
+> ```shell script
+> vi /entrypoint.sh
+> 
+> #!/bin/sh
+> #
+> # 新增内容开始 -----------
+> if [ -e /etc/profile ]; then
+>     source /etc/profile
+> fi
+> # ---------- 新增内容结束
+> 
+> if [ ! -d /run/nginx ]; then
+> ...
+> ```
 
 ## 文件过滤
 前端项目发布的时候只需要编译后的内容就可以，这里选择了 `包含` 条件，内容为 `spug_web/build`，这样最终发布到目标主机上的代码仅包含

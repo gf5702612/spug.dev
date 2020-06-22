@@ -31,6 +31,21 @@ apk add glibc-2.31-r0.apk
 exit
 docker restart spug
 ```
+> 注意：如果你使用的镜像版本低于 2.3.4（https://hub.docker.com/r/openspug/spug/tags 可在这里查看版本信息），则还需要在容器内执行以下操作
+> ```shell script
+> vi /entrypoint.sh
+> 
+> #!/bin/sh
+> #
+> # 新增内容开始 -----------
+> if [ -e /etc/profile ]; then
+>     source /etc/profile
+> fi
+> # ---------- 新增内容结束
+> 
+> if [ ! -d /run/nginx ]; then
+> ...
+> ```
 
 ## 文件过滤
 未完待续
