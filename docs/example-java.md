@@ -13,27 +13,27 @@ title: Java项目配置
 ```shell script
 # 自行至 https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html 下载jdk
 # 把已下载的压缩包拷贝进容器
-docker cp jdk-8u251-linux-x64.tar.gz spug:/
-docker exec -it spug sh
-tar xf jdk-8u251-linux-x64.tar.gz -C /opt
+$ docker cp jdk-8u251-linux-x64.tar.gz spug:/
+$ docker exec -it spug sh
+$ tar xf jdk-8u251-linux-x64.tar.gz -C /opt
 
 # 安装maven
-wget http://apache.spinellicreations.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-tar xf apache-maven-3.6.3-bin.tar.gz -C /opt/
-echo -e 'export JAVA_HOME=/opt/jdk1.8.0_251\nexport PATH=$PATH:$JAVA_HOME/bin:/opt/apache-maven-3.6.3/bin' > /etc/profile.d/java.sh
+$ wget http://apache.spinellicreations.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+$ tar xf apache-maven-3.6.3-bin.tar.gz -C /opt/
+$ echo -e 'export JAVA_HOME=/opt/jdk1.8.0_251\nexport PATH=$PATH:$JAVA_HOME/bin:/opt/apache-maven-3.6.3/bin' > /etc/profile.d/java.sh
 
 # 安装glibc
-wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
-wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.31-r0/glibc-2.31-r0.apk
-apk add glibc-2.31-r0.apk
+$ wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+$ wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.31-r0/glibc-2.31-r0.apk
+$ apk add glibc-2.31-r0.apk
 
 # 退出容器并重启容器
-exit
-docker restart spug
+$ exit
+$ docker restart spug
 ```
 > 注意：如果你使用的镜像版本低于 2.3.4（https://hub.docker.com/r/openspug/spug/tags 可在这里查看版本信息），则还需要在容器内执行以下操作
 > ```shell script
-> vi /entrypoint.sh
+> $ vi /entrypoint.sh
 > 
 > #!/bin/sh
 > #

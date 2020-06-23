@@ -12,18 +12,19 @@ title: Node项目配置
 ## 安装 node(npm)
 如果已安装可跳过该步骤，这里以目前的最新版 `v12.18.1` 为例，如果你使用 Docker 部署的 `Spug`，可参考以下步骤进行安装
 ```shell script
-docker exec -it spug sh
-wget https://unofficial-builds.nodejs.org/download/release/v12.18.1/node-v12.18.1-linux-x64-musl.tar.gz
-tar xf node-v12.18.1-linux-x64-musl.tar.gz -C /opt
-echo 'export PATH=$PATH:/opt/node-v12.18.1-linux-x64-musl/bin' > /etc/profile.d/node.sh
+# 进入容器
+$ docker exec -it spug sh
+$ wget https://unofficial-builds.nodejs.org/download/release/v12.18.1/node-v12.18.1-linux-x64-musl.tar.gz
+$ tar xf node-v12.18.1-linux-x64-musl.tar.gz -C /opt
+$ echo 'export PATH=$PATH:/opt/node-v12.18.1-linux-x64-musl/bin' > /etc/profile.d/node.sh
 
 # 退出容器并重启容器
-exit
-docker restart spug
+$ exit
+$ docker restart spug
 ```
 > 注意：如果你使用的镜像版本低于 2.3.4（https://hub.docker.com/r/openspug/spug/tags 可在这里查看版本信息），则还需要在容器内执行以下操作
 > ```shell script
-> vi /entrypoint.sh
+> $ vi /entrypoint.sh
 > 
 > #!/bin/sh
 > #
