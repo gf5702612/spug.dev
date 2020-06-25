@@ -30,5 +30,5 @@ $ curl https://spug.dev/installer/spug-installer | bash
 ## 安全建议
 - 默认安装的 `Redis` 服务监听在 `127.0.0.1` 但未设置密码，如需启用密码认证，请参考 [如何配置使用带密码的 Redis 服务？](/docs/install-error/#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%B8%A6%E5%AF%86%E7%A0%81%E7%9A%84-redis-%E6%9C%8D%E5%8A%A1%EF%BC%9F)
 - 默认安装了 `Mariadb` 作为数据存储服务，监听在 `127.0.0.1` 创建了用户名为 `spug` 密码为 `spug.dev` 的用户，安全起见请自行更改该密码，并修改 `/data/spug/spug_api/spug/overrides.py` 使用新密码。
-- 确保服务端接收到请求 `HTTP Header` 的 ` X-Real-IP` 为真实的客户端地址，`Spug` 会使用该IP提高安全性（当登用户的IP发生变化时Token自动失效）。
+- 确保服务端接收到请求 `HTTP Header` 的 ` X-Real-IP` 为真实的客户端地址，`Spug` 会使用该IP提高安全性（当登用户的 IP 发生变化时 Token 自动失效）。
 - 如果想更多的控制安装过程，请参考 [生产环境部署文档](/docs/deploy-product) 进行手动部署配置。
