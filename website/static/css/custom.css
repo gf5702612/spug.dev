@@ -26,7 +26,7 @@ body {
     color: #314659;
     font-size: 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    line-height: 1.5;
+    line-height: 1.75;
     background: #fff;
     -webkit-transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -45,7 +45,7 @@ strong, b {
 }
 
 .docsContainer p {
-    line-height: 1.5;
+    line-height: 1.75;
 }
 
 .docsContainer h1 {
