@@ -44,27 +44,16 @@ strong, b {
     color: #000;
 }
 
+.docsContainer h1,h2,h3,h4,h5,h6 {
+    font-weight: 400;
+}
+
 .docsContainer p {
     line-height: 1.75;
 }
 
-.docsContainer h1 {
-    color: #0d1a26;
-    font-size: 26px;
-}
-
-.docsContainer h2 {
-    color: #0d1a26;
-    font-size: 20px;
-}
-
-.docsContainer h3 {
-    color: #0d1a26;
-    font-size: 16px;
-}
-
 blockquote {
-    font-size: 14px;
+    color: #404040
 }
 
 .sponsorshipOnetime {
