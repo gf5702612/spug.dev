@@ -29,7 +29,7 @@ $ python manage.py update
 # 默认更新到最新版本
 # spug 是容器名称，也可以-i指定容器ID
 
-$ docker exec -i spug /data/spug/spug_api/manage.py update 
+$ docker exec -i spug python3 /data/spug/spug_api/manage.py update 
 
 # 更新完成后重启容器
 $ docker restart spug

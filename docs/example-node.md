@@ -16,7 +16,7 @@ title: Node项目配置
 ```shell script
 # 进入容器
 $ docker exec -it spug bash
-$ wget https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-x64.tar.xz
+$ curl -o node-v12.18.1-linux-x64.tar.xz https://nodejs.org/dist/v12.18.1/node-v12.18.1-linux-x64.tar.xz
 $ tar xf node-v12.18.1-linux-x64.tar.xz -C /opt
 $ echo 'export PATH=$PATH:/opt/node-v12.18.1-linux-x64/bin' > /etc/profile.d/node.sh
 
