@@ -125,6 +125,44 @@ server {
 
 ![about](/images/install-error-dd.png)
 
+### Docker 部署使用外部 `Mysql`
+官方 Docker 镜像内置了数据库服务，如果你想使用自己的外部数据库，可以通过如下方法：
+```shell script
+# 1. 进入容器
+$ docker exec -it spug bash
+
+# 2. 修改配置文件使访问外部数据库
+$ vi /data/spug/spug_api/spug/overrides.py
+
+DATABASES = {
+    'default': {
+        'ATOMIC_REQUESTS': True,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'spug',
+        'USER': 'spug',  # 修改为外部数据库的用户
+        'PASSWORD': 'spug.dev',  # 修改为外部数据的用户密码
+        'HOST': 'localhost',    # 修改为外部数据的ip
+        'OPTIONS': {
+            'unix_socket': '/var/lib/mysql/mysql.sock',   # ！！！删除该行
+            'charset': 'utf8mb4',
+            'sql_mode': 'STRICT_TRANS_TABLES',
+        }
+    }
+}
+
+# 3. 停止容器内的数据库服务
+$ vi /etc/supervisord.d/spug.ini
+
+# 找到如下行并删除
+[program:mariadb]
+command = /usr/libexec/mysqld --user=mysql
+autostart = true
+
+# 4. 退出并重启容器
+$ exit
+$ docker restart spug
+```
+
 ## 二次开发常见问题
 
 
