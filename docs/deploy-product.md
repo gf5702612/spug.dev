@@ -129,6 +129,14 @@ server {
         root /data/spug/spug_web/build/;
         client_max_body_size 20m;   # 该值会影响文件管理器可上传文件的大小限制，请合理调整
 
+        gzip  on;
+	    gzip_min_length  1k;
+	    gzip_buffers     4 16k;
+	    gzip_http_version 1.1;
+	    gzip_comp_level 7;
+	    gzip_types       text/plain text/css text/javascript application/javascript application/json;
+        gzip_vary on;
+
         location ^~ /api/ {
                 rewrite ^/api(.*) $1 break;
                 proxy_pass http://127.0.0.1:9001;
