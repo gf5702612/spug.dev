@@ -50,7 +50,6 @@ $ pip install gunicorn mysqlclient -i https://pypi.doubanio.com/simple/
 $ vi spug_api/spug/overrides.py
 
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1']
 
 DATABASES = {
     'default': {
