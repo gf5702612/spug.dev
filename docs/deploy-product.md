@@ -140,6 +140,7 @@ server {
         location ^~ /api/ {
                 rewrite ^/api(.*) $1 break;
                 proxy_pass http://127.0.0.1:9001;
+                proxy_read_timeout 180s;
                 proxy_redirect off;
                 proxy_set_header X-Real-IP $remote_addr;
         }
