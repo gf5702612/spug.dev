@@ -7,7 +7,6 @@
     ],
     "快速开始": [
       "install-docker",
-      "install",
       "install-error",
       "faq"
     ],
@@ -56,6 +55,7 @@
       "example-java"
     ],
     "进阶指南": [
+      "install",
       "deploy-product-script",
       "deploy-product",
       "update-version"

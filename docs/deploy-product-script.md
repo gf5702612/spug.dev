@@ -1,10 +1,10 @@
 ---
 id: deploy-product-script
-title: 生产环境一键部署
+title: 一键部署
 ---
 
 ## 操作系统
-> 一键安装脚本在Centos7/8和Ubuntu 18.04验证通过，其他版本暂未验证。
+> 我们推荐你使用 [Docker安装](/docs/install-docker) 来确保体验的一致性，一键安装脚本在Centos7/8和Ubuntu 18.04验证通过，其他版本暂未验证。
 
 ## 安装命令
 ```shell script

@@ -2,7 +2,18 @@
 id: update-version
 title: 版本升级
 ---
-## 命令安装，版本更新
+## Docker安装，版本更新
+```
+# 默认更新到最新版本
+# spug 是容器名称，也可以替换为自己的容器ID
+
+$ docker exec -i spug python3 /data/spug/spug_api/manage.py update 
+
+# 更新完成后重启容器
+$ docker restart spug
+```
+
+## 手动安装，版本更新
 ```
 # 默认更新到最新版本
 
@@ -24,15 +35,3 @@ $ python manage.py update
 > $ systemctl restart supervisord
 > ```
 
-## Docker安装，版本更新
-```
-# 默认更新到最新版本
-# spug 是容器名称，也可以-i指定容器ID
-
-$ docker exec -i spug python3 /data/spug/spug_api/manage.py update 
-
-# 更新完成后重启容器
-$ docker restart spug
-```
-
-> 注意：如果你现在部署的 `v2.2.x` 的版本（如果你现在已经是 `v2.3.x` 则忽略下边的内容），Docker 方式部署的因镜像问题无法正常更新到 `v2.3.0`，请直接使用新版镜像并参考新版的 [docker安装](/docs/install-docker) 文档，对此我们非常抱歉。

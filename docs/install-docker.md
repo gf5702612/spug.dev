@@ -50,3 +50,7 @@ $ docker restart spug
 用户名： admin  
 密码： spug.dev
 ```
+
+### 5. 版本升级
+你可以在 `系统管理/系统设置/关于` 中查看当前运行的 `Spug` 版本，可以在 [更新日志](/docs/change-log) 
+查看当前最新版本，如果需要升级 `Spug` 请参考 [版本升级文档](/docs/update-version)。
