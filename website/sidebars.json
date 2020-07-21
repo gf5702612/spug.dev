@@ -58,6 +58,7 @@
       "install",
       "deploy-product-script",
       "deploy-product",
+      "practice",
       "update-version"
     ]
   },
