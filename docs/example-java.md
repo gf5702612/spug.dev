@@ -65,12 +65,20 @@ $ cp ruoyi-admin/target/ruoyi-admin.jar .
 这里拷贝 `ruoyi-admin.jar` 至项目根目录，因为咱们文件过滤规则指定的就是相对于项目根目录。
 
 ## 应用发布前
-发布前停止现有的服务，这里使用使用了 `set +e`, 默认 `Spug` 执行任何一个命令如果返回的退出状态码不为 `0` 则终止发布，这里使用 `kill` 杀进程
-时可能之前由于各种原因进程已经不存在了，那么执行以下命令时可能会返回非 `0` 的退出状态码，所以使用 `set +e` 来避免该问题。
+发布前停止现有的服务。
 ```shell script
 # 停止服务
 $ set +e
 $ ps -ef | grep ruoyi-admin | grep -v grep | awk '{print $2}' | xargs kill -9
+```
+因为 `Spug` 会检测每个钩子内脚本最终退出状态码，如果是 `0` 则认为执行异常终止发布，所以如果你的目标主机是 `Centos` 则需要通过 `if` 来判断进程
+是否存在，如果存在才执行 `kill`。 
+```shell script
+# 停止服务
+$ PID=$(ps -ef | grep ruoyi-admin | grep -v grep | awk '{print $2}')
+$ if [ ! -z $PID ]; then
+$    kill -9 $PID
+$ fi
 ```
 
 ## 应用发布后
