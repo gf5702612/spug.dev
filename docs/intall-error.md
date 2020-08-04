@@ -108,8 +108,8 @@ server {
 
 ### 文件管理器上传文件报错 `413 Request Entity Too Large`
 文件上传大小受 `Nginx` 的 `client_max_body_size` 影响，请修该值至合适的大小，参考以下配置：
-> docker 方式部署配置文件位于容器内的 `/etc/nginx/conf.d/default.conf`, 可以在容器外部编辑后通过 `docker cp` 至容器内，也可以在容器内执行
-> `apk add vim` 来安装 `vi` 在容器内直接修改，最后别忘了重启容器。
+> docker 方式部署配置文件位于容器内的 `/etc/nginx/nginx.conf`, 可以在容器外部编辑后通过 `docker cp` 至容器内，也可以在容器内执行
+> `vi` 在容器内直接修改，最后别忘了重启容器。
 ```shell script
 server {
   listen 80;
