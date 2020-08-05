@@ -83,10 +83,18 @@ title: 发布配置
 - `SPUG_DEPLOY_ID` 发布配置 ID（v2.2.3新增）
 - `SPUG_DEPLOY_TYPE` 发布类型（"1" 为正常发布，"2" 为回滚）
 - `SPUG_API_TOKEN` 访问配置中心获取配置的 `API_TOKEN`
-以下变量仅当在主机执行时有效
-- `SPUG_HOST_ID` 当前执行主机的 ID（v2.2.3新增）
-- `SPUG_HOST_NAME` 当前执行主机的 IP /域名（v2.2.3新增）
+- `SPUG_HOST_ID` 当前执行主机的 ID（v2.2.3新增，仅在主机执行阶段有效）
+- `SPUG_HOST_NAME` 当前执行主机的 IP /域名（v2.2.3新增，仅在主机执行阶段有效）
+
+常规发布有效
+
+- `SPUG_REPOS_DIR` 常规发布源码存储目录（v2.3.4新增，`$SPUG_REPOS_DIR/$SPUG_DEPLOY_ID` 即为本次发布应用的源码目录）
+- `SPUG_DST_DIR` 常规发布目标主机部署路径（v2.3.8新增）
 - `SPUG_GIT_BRANCH` 本次发布选择的 Git 分支（v2.3.2新增，常规发布基于分支时有效）
 - `SPUG_GIT_COMMIT_ID` 本次发布选择的Git Commit ID（v2.3.2新增，常规发布基于分支时有效）
-- `SPUG_GIT_TAG` 本次发布的Git Tag（v2.3.2新增，常规发布基于Tag时有效）
-- `SPUG_REPOS_DIR` 常规发布源码存储目录（v2.3.4新增，`$SPUG_REPOS_DIR/$SPUG_DEPLOY_ID` 即为本次发布应用的源码目录）
+- `SPUG_GIT_TAG` 本次发布的Git Tag（v2.3.2新增，常规发布基于 Tag 时有效）
+
+自定义发布有效
+
+- `SPUG_RELEASE` 自定义发布申请的 `SPUG_RELEASE` 值（自定义发布有效）
+
