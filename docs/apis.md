@@ -28,6 +28,7 @@ title: 配置中心
     | --- | :---: | :---: | --- | --- | --- |
     | apiToken | string | 是 | | $SPUG_API_TOKEN | 固定值，`Spug` 内置的全局变量，仅可在发布配置的钩子中引用 |
     | format   | string | 否 | kv | json  | 返回的格式，目前支持 `kv` 和 `json` 两种格式，分别对应 `key = value` 和 `{"key": "value"}` |
+    | noPrefix | string | 否 | | 1 | v2.3.8 新增，默认返回的 `key` 会增加应用或服务标示作为前缀来确保不会出现同名的 `key` 造成配置的意外覆盖问题，如果不需要这一特性可以传该参数来禁用这一默认行为 |
 
 - 使用示例
     
@@ -47,8 +48,9 @@ title: 配置中心
     | app | string | 是 | | order | 指定要获取其配置的应用的标识符（创建应用时设置的该标识符，请在应用管理或应用配置页面查看应用的标识符） |
     | env | string | 是 | | dev | 指定获取应用所在环境的标识符（创建环境时设置的该标识符，请在 配置中心/环境管理页面查看环境标识符）
     | format   | string | 否 | kv | json  | 返回的格式，目前支持 `kv` 和 `json` 两种格式，分别对应 `key = value` 和 `{"key": "value"}` |
+    | noPrefix | string | 否 | | 1 | v2.3.8 新增，默认返回的 `key` 会增加应用或服务标示作为前缀来确保不会出现同名的 `key` 造成配置的意外覆盖问题，如果不需要这一特性可以传该参数来禁用这一默认行为 |
 
-- 使用示例
+- 使用示例1
     
     ```shell script
     curl "https://demo.spug.dev/api/apis/config/?apiKey=JLV8IGO0DhoxcM7I&app=order&env=test"
@@ -66,3 +68,20 @@ title: 配置中心
     redis_host = 127.0.0.1
     redis_password = 123456
     ```
+- 使用示例2
+    
+    ```shell script
+    curl "https://demo.spug.dev/api/apis/config/?apiKey=JLV8IGO0DhoxcM7I&app=order&env=test&noPrefix=1"
+    ```
+    输出如下
+    ```shell script
+    app_debug = true
+    cache_driver = file
+    database = order
+    host = 127.0.0.1
+    password = 123456
+    port = 3306
+    url = http://test-order.internal.com
+    username = root
+    ```
+    > 可以通过对比发现，在 `noPrefix` 模式下服务 `订单主库`（标识符 db_order）的配置 `host` 和 `password` 被服务 `Redis服务`（标识符 redis）覆盖了，所以最终的配置意外丢失了2个。
