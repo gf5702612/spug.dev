@@ -154,7 +154,9 @@ server {
                 proxy_set_header X-Real-IP $remote_addr;
         }
 
-        error_page 404 /index.html;
+        location / {
+                try_files $uri /index.html;
+        }
 }
 ```
 > 注意：如果你没有在 `spug.conf` 中指定 `server_name` 则需要把 `/etc/nginx/nginx.conf` 中默认的 `server` 块注释或删除后才能正常访问，
