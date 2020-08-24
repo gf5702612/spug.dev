@@ -27,12 +27,12 @@ $ docker pull registry.aliyuncs.com/openspug/spug
 Docker镜像内部使用的 `Mysql` 数据库。
 > 如果需要持久化存储代码和数据，可以添加：-v 映射容器内/data路径
 ```shell script
-$ docker run -d --name=spug -p 80:80 registry.aliyuncs.com/openspug/spug
+$ docker run -d --restart=always --name=spug -p 80:80 registry.aliyuncs.com/openspug/spug
 
 # 持久化存储启动命令：
-# mydata是本地磁盘路径，/data是容器内代码和数据初始化存储的路径
+# mydata指的是本地磁盘路径，也可以是其他目录，但需要保证映射的本地磁盘路径已经存在，/data是容器内代码和数据初始化存储的路径
 
-$ docker run -d --name=spug -p 80:80 -v /mydata/:/data registry.aliyuncs.com/openspug/spug
+$ docker run -d --restart=always --name=spug -p 80:80 -v /mydata/:/data registry.aliyuncs.com/openspug/spug
 ```
 
 ### 4. 初始化
