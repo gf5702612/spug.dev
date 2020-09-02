@@ -19,7 +19,8 @@
         "ids": [
           "deploy-app",
           "deploy-config",
-          "deploy-request"
+          "deploy-request",
+          "deploy-rollback"
         ]
       },
       {
