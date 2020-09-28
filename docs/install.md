@@ -4,7 +4,7 @@ title: 二次开发
 ---
 
 > 此安装文档适合具有一定编程能力基础的人员进行二次开发时的环境搭建，如果你是在生产环境部署，推荐 [Docker安装](/docs/install-docker)，
-> 如有必要你也可以考虑 [手动部署](/docs/deploy-product.md)。
+> 如有必要你也可以考虑 [手动部署](/docs/deploy-product/)。
 
 ## 依赖环境
 
