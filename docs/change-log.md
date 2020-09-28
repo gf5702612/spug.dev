@@ -3,6 +3,8 @@ id: change-log
 title: 更新日志
 ---
 
+### [如何升级新版本？](/docs/update-version/)
+
 ## 2.3.10
 `2020-09-15`
 
