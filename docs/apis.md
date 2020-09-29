@@ -34,7 +34,7 @@ title: 配置中心
     
     以下截图即在 `应用发布前` 中调用了获取配置的接口，将会把该应用该环境下的配置保存在 `.env` 文件中。
     
-    ![about](http://cdn.qbangmang.com/spug/api-config.jpg)
+    ![about](/images/api-config.jpg)
 
 ### 独立使用
 

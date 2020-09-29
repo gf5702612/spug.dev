@@ -35,7 +35,7 @@ function About(props) {
             <h2>关注Spug公众号</h2>
           </header>
           <div className="abooutSpugQrcode">
-            <img src='http://image.qbangmang.com/weixin-spug-8.jpg' alt="关注我们"></img>
+            <img src="/images/spug-weixin.jpeg" alt="关注我们" />
           </div>
         </div>
       </Container>

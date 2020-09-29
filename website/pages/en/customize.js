@@ -27,10 +27,10 @@ function Sponsorship(props) {
           </header>
           <div className="sponsorshipOnetime">
             <div className="sponsorshipOnetimeQrcode">微信
-              <img src='http://image.qbangmang.com/spug-wx-pay.png' alt="微信"></img>
+              <img src="/images/spug-wx-pay.png" alt="微信" />
             </div>
             <div className="sponsorshipOnetimeQrcode">支付宝
-              <img src='http://image.qbangmang.com/spug-ali-pay.png' alt="支付宝"></img>
+              <img src="/images/spug-ali-pay.png" alt="支付宝" />
             </div>
          </div>
       </div>

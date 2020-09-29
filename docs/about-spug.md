@@ -20,6 +20,6 @@ title: 关于Spug
 
 ## 预览
 
-![about](http://image.qbangmang.com/app-apply-2.0.png)
+![about](/images/about-spug.png)
 
 
