@@ -23,10 +23,10 @@ $ git checkout x.x.x   # x.x.x 为指定的发行版本，例如 git checkout v2
 ```
 
 ### 2. [下载](https://github.com/openspug/spug/releases) 已编译打包后的前端项目
-将下载好的前端压缩包解压到指定目录，`x.x.x` 是的你下载好的压缩包版本
+将下载好的前端压缩包解压到指定目录，假设`web_x.y.z.tar.gz` 是的你下载好的压缩包
 > 访问 [`Github`](https://github.com/openspug/spug/releases) 比较慢的情况下，可以在尝试在 [`Gitee`](https://gitee.com/openspug/spug/releases) 下载。
 ```
-$ tar xf spug_web_x.x.x.tar.gz -C /data/spug/spug_web/;
+$ tar xf web_x.y.z.tar.gz -C /data/spug/spug_web/;
 ```
 
 ### 3. 创建运行环境
