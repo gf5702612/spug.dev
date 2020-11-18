@@ -127,6 +127,7 @@ server {
 
 ### Docker 部署使用外部 `Mysql`
 官方 Docker 镜像内置了数据库服务，如果你想使用自己的外部数据库，可以通过如下方法：
+> 如果需要迁移数据，请查看 [版本升级注意事项](/docs/update-version)，以免造成后期无法升级新版本。
 ```shell script
 # 1. 进入容器
 $ docker exec -it spug bash
