@@ -72,7 +72,7 @@ DATABASES = {
 ### 5. 初始化数据库
 ```shell script
 $ cd /data/spug/spug_api
-$ python manage.py initdb
+$ python manage.py updatedb
 ````
 ### 6. 创建默认管理员账户
 ```shell script

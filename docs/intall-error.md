@@ -5,7 +5,7 @@ title: 常见问题
 
 ## 安装部署常见问题
 
-### 执行数据初始化命令 `python manage.py initdb` 报错
+### 执行数据初始化命令 `python manage.py updatedb` 报错
 一般有以下两种情况
     
 - `Django` 版本使用了 3.x 的版本，我们仅支持 2.2.x 版本，安装依赖推荐使用文档中的 `pip install -r requirements.txt` 来安装

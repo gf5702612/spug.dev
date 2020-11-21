@@ -33,7 +33,7 @@ $ pip install -r requirements.txt -i https://pypi.doubanio.com/simple/
 ### 3. 初始化数据库
 默认使用的 `Sqlite` 数据库。
 ```shell script
-$ python manage.py initdb
+$ python manage.py updatedb
 ````
 ### 4. 创建默认管理员账户
 ```shell script
