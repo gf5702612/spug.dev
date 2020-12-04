@@ -71,7 +71,7 @@ $ cp ruoyi-admin/target/ruoyi-admin.jar .
 $ set +e
 $ ps -ef | grep ruoyi-admin | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
-因为 `Spug` 会检测每个钩子内脚本最终退出状态码，如果是 `0` 则认为执行异常终止发布，所以如果你的目标主机是 `Centos` 则需要通过 `if` 来判断进程
+因为 `Spug` 会检测每个钩子内脚本最终退出状态码，如果非 `0` 则认为执行异常终止发布，所以如果你的目标主机是 `Centos` 则需要通过 `if` 来判断进程
 是否存在，如果存在才执行 `kill`。 
 ```shell script
 # 停止服务
