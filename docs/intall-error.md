@@ -30,7 +30,7 @@ title: 常见问题
 的密钥，然后再操作添加主机，等添加完成后再恢复原有的密钥。
 
 ### 如何配置使用带密码的 `Redis` 服务？
-假设 `Redis` 密码为 `foo123`，则需要更改以配置文件 `spug_api/spug/settings.py` 或者 `overrides.py` 如下内容
+假设 `Redis` 密码为 `foo123`，则需要更改以配置文件 `spug_api/spug/overrides.py`（推荐） 或者 `settings.py`（影响后续版本升级） 如下内容，修改完成后记得重启服务。
 > 自定义的配置可以在 `spug_api/spug/` 目录下创建 `overrides.py` 文件来覆盖默认的配置。
 ```shell script
 $ vi spug_api/spug/settings.py
