@@ -27,7 +27,7 @@ $ git clone https://github.com/openspug/spug /data/spug
 $ cd /data/spug/spug_api
 $ python3 -m venv venv
 $ source venv/bin/activate
-$ pip install -r requirements.txt -i https://pypi.doubanio.com/simple/
+$ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
 ### 3. 初始化数据库
