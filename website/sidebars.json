@@ -47,7 +47,8 @@
         "type": "subcategory",
         "label": "系统管理",
         "ids": [
-          "system-account"
+          "system-account",
+          "wx-token"
         ]
       }
     ],
