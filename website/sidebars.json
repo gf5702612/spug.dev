@@ -58,7 +58,6 @@
     ],
     "进阶指南": [
       "install",
-      "deploy-product-script",
       "deploy-product",
       "practice",
       "update-version"

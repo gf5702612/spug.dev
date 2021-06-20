@@ -3,7 +3,7 @@ id: deploy-product
 title: 手动部署
 ---
 
-> 我们推荐你使用 [Docker安装](/docs/install-docker) 来确保体验的一致性，同时提供了 [一键安装脚本](/docs/deploy-product-script)，用于简单快速部署。
+> 我们推荐你使用 [Docker安装](/docs/install-docker) 来确保体验的一致性。
 
 ## 准备环境
 
@@ -30,6 +30,7 @@ $ tar xf web_x.y.z.tar.gz -C /data/spug/spug_web/;
 ```
 
 ### 3. 创建运行环境
+如需要使用常规发布功能，则需要安装 <font color="red">git v2.17.0+</font>。
 ```shell script
 # 安装依赖
 $ yum install mariadb-devel python3-devel gcc openldap-devel redis nginx supervisor
