@@ -24,8 +24,9 @@ $ docker pull registry.aliyuncs.com/openspug/spug
 ```
 
 ### 3. 启动容器
-Docker镜像内部使用的 `Mysql` 数据库。
-> 如果需要持久化存储代码和数据，可以添加：-v 映射容器内/data路径
+如果需要持久化存储代码和数据，可以添加：-v 映射容器内/data路径。
+> 官方镜像内置了 `Mysql` 数据库，如果需要使用外部已有数据库（ <font color="red">Mysql 5.6+</font> ），可以参考 [此文档](/docs/install-error#docker-部署使用外部-mysql) 
+> 设置后再进行下一步的初始化操作。
 ```shell script
 $ docker run -d --restart=always --name=spug -p 80:80 registry.aliyuncs.com/openspug/spug
 
