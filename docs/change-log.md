@@ -5,6 +5,14 @@ title: 更新日志
 
 ### [如何升级新版本？](/docs/update-version/)
 
+## 3.0.1-beta.9
+`2021-09-08`
+
+- 🌟 批量执行新增了关于主机的内置全局变量（SPUG_HOST_ID/SPUG_HOST_NAME/SPUG_HOST_HOSTNAME/SPUG_SSH_PORT/SPUG_SSH_USERNAME）
+- 🛠 优化对windows系统的支持
+- 🐞 修复自动发布提示文件找不到的问题
+- 🐞 修复批量执行某些情况下输出内容被合并展示的问题
+
 ## 3.0.1-beta.8
 `2021-09-07`
 
