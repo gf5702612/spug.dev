@@ -32,11 +32,9 @@ $ docker run -d --restart=always --name=spug -p 80:80 registry.aliyuncs.com/open
 
 # 持久化存储启动命令：
 # mydata指的是本地磁盘路径，也可以是其他目录，/data是容器内代码和数据初始化存储的路径
-
 $ docker run -d --restart=always --name=spug -p 80:80 -v /mydata/:/data registry.aliyuncs.com/openspug/spug
 
 # 如果你需要在spug内使用docker命令则需要添加额外的参数
-
 $ docker run -d --restart=always --name=spug -p 80:80 -v /mydata/:/data -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker registry.aliyuncs.com/openspug/spug
 ```
 
