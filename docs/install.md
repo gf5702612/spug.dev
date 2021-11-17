@@ -9,7 +9,7 @@ title: 二次开发
 ## 依赖环境
 
 - Python 3.6及以上
-- Nodejs 12.14 TLS
+- Nodejs 12.14 LTS
 - Redis 3.x及以上
 - 现代浏览器
 
