@@ -184,4 +184,4 @@ $ systemctl restart supervisord
 
 ### 11. 安全建议
 > - 请确保安装的 `Redis` 仅监听在 `127.0.0.1`。如果需要使用密码认证的 `Redis` 请参考 [如何配置使用带密码的 Redis 服务？](/docs/install-error/#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%B8%A6%E5%AF%86%E7%A0%81%E7%9A%84-redis-%E6%9C%8D%E5%8A%A1%EF%BC%9F)
-> - 确保服务端接收到请求 `HTTP Header` 的 ` X-Real-IP` 为真实的客户端地址，`Spug` 会使用该 IP 提高安全性（当登用户的 IP 发生变化时 Token 自动失效）。
+> - 确保服务端接收到请求 `HTTP Header` 的 ` X-Real-IP` 为真实的客户端地址，`Spug` 会使用该 IP 提高安全性（当登用户的 IP 发生变化时 Token 自动失效），[参考文档](/docs/practice)。
