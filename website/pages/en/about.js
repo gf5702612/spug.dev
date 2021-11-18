@@ -32,10 +32,18 @@ function About(props) {
         </div>
         <div className="post">
           <header className="postHeader">
-            <h2>关注Spug公众号</h2>
+            <h2>关注Spug社区公众号</h2>
           </header>
           <div className="abooutSpugQrcode">
-            <img src="/images/spug-weixin.jpeg" alt="关注我们" />
+            <img src="https://cdn.spug.cc/img/spug-club.jpg" alt="关注我们" />
+          </div>
+        </div>
+        <div className="post">
+          <header className="postHeader">
+            <h2>关注Spug推送服务号</h2>
+          </header>
+          <div className="abooutSpugQrcode">
+            <img src="https://cdn.spug.cc/img/spug-weixin.jpeg" alt="关注我们" />
           </div>
         </div>
       </Container>
