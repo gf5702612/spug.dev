@@ -40,6 +40,7 @@ $ docker run -d --restart=always --name=spug -p 80:80 -v /mydata/:/data -v /var/
 
 ### 4. 初始化
 以下操作会创建一个用户名为 `admin` 密码为 `spug.dev` 的管理员账户，可自行替换管理员账户。
+> 如果提示连接数据失败，再次执行尝试就可以了。
 ```shell script
 $ docker exec spug init_spug admin spug.dev
 
