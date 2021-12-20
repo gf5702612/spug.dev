@@ -48,6 +48,7 @@
         "label": "系统管理",
         "ids": [
           "system-account",
+          "system-set",
           "wx-token"
         ]
       }
