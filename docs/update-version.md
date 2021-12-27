@@ -7,6 +7,8 @@ title: 版本升级
 > 该工具的正常运行依赖安装时初始化生成的 migrations 目录和数据库的 django_migrations 表，
 > <font color="red">请不要删除或改动这些目录或表，否则当涉及表结构更新的版本升级后可能造成缺少表字段等问题。</font>
 
+> 注意：如果你现在部署的 `v2.x.x` 的版本（系统设置/关于），请不要通过该升级工具升级 `v3` 版本，否则会造成运行异常！。[#419](https://github.com/openspug/spug/issues/419)
+
 ## Docker安装，版本更新
 ```
 # 默认更新到最新版本
