@@ -104,4 +104,10 @@ title: 发布配置
 自定义发布有效
 
 - `SPUG_RELEASE` 自定义发布申请的 `SPUG_RELEASE` 值（自定义发布有效）
+> SPUG_RELEASE 会自动按空格分隔解析为多个参数，例如 abc 123 def，会对应生成4个变量：
+> ```shell
+> SPUG_RELEASE_1 = abc
+> SPUG_RELEASE_2 = 123
+> SPUG_RELEASE_3 = def
+> ```
 
