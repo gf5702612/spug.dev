@@ -172,7 +172,7 @@ $ docker restart spug
 ```shell script
 $ cd /data/spug/spug_api
 $ source venv/bin/activate
-$ python manage.py runworker ssh_exec
+$ python manage.py runworker
 ```
 
 ### 标准安装任务计划模块添加的任务不会执行
@@ -181,6 +181,7 @@ $ python manage.py runworker ssh_exec
 $ cd /data/spug/spug_api
 $ source venv/bin/activate
 $ python manage.py runscheduler
+$ python manage.py runworker
 ```
 
 ### 标准安装监控中心模块添加的监控任务不会执行
@@ -189,6 +190,7 @@ $ python manage.py runscheduler
 $ cd /data/spug/spug_api
 $ source venv/bin/activate
 $ python manage.py runmonitor
+$ python manage.py runworker
 ```
 
 ### `macOS` 如何使用 `Mysql` 替代默认的 `Sqlite` 数据库？
