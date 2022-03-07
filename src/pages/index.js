@@ -20,8 +20,8 @@ function HomepageHeader() {
             入门指南
           </Link>
           <Link
-            style={{marginLeft: 48}}
-            className="button button--outline button--lg"
+            style={{marginLeft: 48, border: '1px solid #fff'}}
+            className="button button--lg"
             to="https://demo.spug.cc">
             演示预览
           </Link>
