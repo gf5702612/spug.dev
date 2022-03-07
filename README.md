@@ -1,1 +1,1 @@
-# https://spug.dev
+# https://spug.cc
