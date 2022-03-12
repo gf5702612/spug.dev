@@ -49,7 +49,7 @@ title: 发布配置
 [使用 `nohup` 或 `&` 启动后台进程页面一直在转圈不会结束？](/docs/use-problem#nohup)
 :::
 
-### 数据传输
+### 数据传输 {#transfer}
 从 `v2.3.7` 版本开始已支持添加数据传输动作，用于把文件从部署 `Spug` 的容器或主机传输至目标主机，其页面展示效果如下：
 ![about](https://cdn.spug.cc/v2/deploy-config-transfer.png)
 - **数据来源** 数据来源可以选择以下两种
@@ -104,19 +104,21 @@ title: 发布配置
 
 ## 全局变量 {#global-env}
 - `SPUG_APP_NAME` 发布应用的名称
+- `SPUG_APP_KEY` 发布应用的标识符
 - `SPUG_APP_ID` 发布应用的 ID
-- `SPUG_REQUEST_NAME` 发布申请单的名称
 - `SPUG_REQUEST_ID` 发布申请单 ID
+- `SPUG_REQUEST_NAME` 发布申请单的名称
+- `SPUG_VERSION` 发布申请版本
+- `SPUG_BUILD_VERSION` 发布申请内部版本号（v3.0.5新增）
 - `SPUG_ENV_ID` 发布环境 ID
-- `SPUG_ENV_KEY` 发布环境的Key
-- `SPUG_VERSION` 发布内部版本
+- `SPUG_ENV_KEY` 发布环境的标识符
 - `SPUG_DEPLOY_ID` 发布配置 ID（v2.2.3新增）
 - `SPUG_DEPLOY_TYPE` 发布类型（"1" 为正常发布，"2" 为回滚）
 - `SPUG_API_TOKEN` 访问配置中心获取配置的 `API_TOKEN`
 - `SPUG_HOST_ID` 当前执行主机的 ID（v2.2.3新增，仅在主机执行阶段有效）
 - `SPUG_HOST_NAME` 当前执行主机的 IP /域名（v2.2.3新增，仅在主机执行阶段有效）
 
-常规发布有效
+**常规发布有效**
 
 - `SPUG_REPOS_DIR` 常规发布源码存储目录（v2.3.4新增，`$SPUG_REPOS_DIR/$SPUG_DEPLOY_ID` 即为本次发布应用的源码目录）
 - `SPUG_DST_DIR` 常规发布目标主机部署路径（v2.3.8新增）
@@ -124,13 +126,14 @@ title: 发布配置
 - `SPUG_GIT_COMMIT_ID` 本次发布选择的Git Commit ID（v2.3.2新增，常规发布基于分支时有效）
 - `SPUG_GIT_TAG` 本次发布的Git Tag（v2.3.2新增，常规发布基于 Tag 时有效）
 
-自定义发布有效
+**自定义发布有效**
 
-- `SPUG_RELEASE` 自定义发布申请的 `SPUG_RELEASE` 值（自定义发布有效）
+- `SPUG_RELEASE` 新建自定义发布申请填写的 `SPUG_RELEASE` 值（自定义发布有效）
 
   :::tip 提示
-  SPUG_RELEASE 会自动按空格分隔解析为多个参数，例如 abc 123 def，会对应生成4个变量：
+  SPUG_RELEASE 会自动按空格分隔解析为多个环境变量，例如 abc 123 def，会对应有4个变量：
   ```bash
+  SPUG_RELEASE = abc 123 def
   SPUG_RELEASE_1 = abc
   SPUG_RELEASE_2 = 123
   SPUG_RELEASE_3 = def

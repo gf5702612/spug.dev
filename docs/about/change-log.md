@@ -7,6 +7,24 @@ sidebar_position: 2
 
 ### [如何升级新版本？](/docs/update-version/)
 
+## 3.0.5
+`2022-03-12`
+
+- 🌟 普通用户现可以通过个人中心设置微信Token
+- 🌟 Webhook触发的自动发布将读取commit信息作为发布申请标题
+- 🌟 新增全局变量SPUG_BUILD_VERSION [#444](https://github.com/openspug/spug/issues/444)
+- 🌟 监控中心新增了总览栏目，用于查看监控项的实时状态
+- 🛠 优化了任务计划添加多个执行对象的体验
+- 🛠 来自模版的批量执行历史记录将显示模版名称 [#430](https://github.com/openspug/spug/issues/430)
+- 🛠 Web terminal主机列表添加刷新按钮 [#433](https://github.com/openspug/spug/issues/433)
+- 🛠 Web terminal主机列表搜索已支持关联SSH连接地址搜索
+- 🛠 任务计划Cron现已支持周的逗号语法
+- 🛠 发布申请列表增加发布人、审核人字段 [#440](https://github.com/openspug/spug/issues/440)
+- 🛠 系统通知将显示已读的历史通知，同时自动删除超过一周且已读的系统通知
+- 🛠 优化自定义发布数据传输执行逻辑使更符合用户期望
+- 🐞 修复websocket连接认证未应用安全设置的问题
+- 🐞 修复某些特殊情况下存在告警未能正常发送的问题
+
 ## 3.0.4
 `2021-12-27`
 
