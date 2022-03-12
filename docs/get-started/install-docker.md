@@ -65,9 +65,6 @@ docker run -d --restart=always --name=spug -p 80:80 -v /spug/:/data -v /var/run/
 
 ```bash
 docker exec spug init_spug admin spug.dev
-
-# 执行完毕后需要重启容器
-docker restart spug
 ```
 
 ### 5. 访问测试
